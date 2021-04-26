@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.TableViewController">
+   <children>
+      <TableView layoutX="97.0" layoutY="200.0" prefHeight="199.0" prefWidth="427.0">
+        <columns>
+          <TableColumn id="idColumn" prefWidth="75.0" text="ID" />
+          <TableColumn id="dateColumn" prefWidth="75.0" text="Dato" />
+            <TableColumn id="typeColumn" prefWidth="75.0" text="Type" />
+        </columns>
+      </TableView>
+      <TextField id="cprsogefelt" fx:id="cprsogefelt" layoutX="151.0" layoutY="104.0" onAction="#findAppointmentsByCPR"  prefHeight="27.0" prefWidth="299.0" promptText="Indtast CPR for at finde aftaler.." />
+   </children>
+</Pane>
