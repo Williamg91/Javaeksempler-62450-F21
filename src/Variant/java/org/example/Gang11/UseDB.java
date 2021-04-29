@@ -5,13 +5,19 @@ import java.util.ArrayList;
 
 public class UseDB {
 
+
+
     private Statement statement;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
     private Connection connection;
 
+    private String felt = "felt";
+
+
     public UseDB(Connection connection){
         this.connection=connection;
+
       //  System.out.println("I got the connection named..."+connection.toString());
     }
 

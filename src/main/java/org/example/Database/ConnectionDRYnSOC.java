@@ -11,6 +11,8 @@ public class ConnectionDRYnSOC {
     private static String url;
 // a rising tide lifts all boats.
     //AALLL BOOATS
+
+    private String hest="hest";
     public ConnectionDRYnSOC() {
 
 

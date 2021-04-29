@@ -10,6 +10,8 @@ import org.example.App;
 import org.example.Datamodel.Appointment;
 import org.example.Datamodel.Person;
 
+import java.io.IOException;
+
 
 public class TableViewController {
 
@@ -49,5 +51,9 @@ construct();
             System.out.println("CPR Valid");
 
         }
+    }
+
+    public void logout(ActionEvent actionEvent) throws IOException {
+        App.setRoot("loginfelt");
     }
 }
