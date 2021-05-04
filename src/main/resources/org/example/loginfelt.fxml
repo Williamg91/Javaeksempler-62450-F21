@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane fx:controller="org.example.LoginController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LoginController">
    <children>
-      <TextField fx:id="loginfelt" onAction="#loginshift" layoutX="220.0" layoutY="152.0" promptText="CPR nr plz" />
+
+      <TextField fx:id="loginfelt" layoutX="220.0" layoutY="152.0" onAction="#startThread" promptText="CPR nr plz" />
+       <Pane layoutX="200" layoutY="300" prefHeight="27.0" prefWidth="91.0">
+           <Button fx:id="indreknap" prefHeight="27.0" prefWidth="102.0">
+
+           </Button>
+
+
+       </Pane>                                <Label fx:id="label" layoutX="300.0" layoutY="100.0"> Værdi</Label>
    </children>
+
+
 </Pane>

@@ -59,7 +59,7 @@ this.temperatureMin=temperatureMin;
             TemperaturesensorDTO temperaturesensorDTO = new TemperaturesensorDTO(temperatureMin,temperatureMax);
 
             if(sensorObserver!=null){
-                sensorObserver.notify();
+                sensorObserver.notify(temperaturesensorDTO);
 
             }
             try {
