@@ -1,6 +1,5 @@
 package org.example.Database;
 
-import org.example.Datamodel.DTOs.PulseSensorDTO;
 import org.example.Datamodel.DTOs.TemperaturesensorDTO;
 
 import java.sql.Connection;

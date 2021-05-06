@@ -13,55 +13,24 @@ public class TemperaturSensorDataGenerator implements SensorObservable {
     //the data being created.
 
 
-    private SensorObserver sensorObserver;
-    double temperatureMax;
 
-    public double getTemperatureMax() {
-        return temperatureMax;
-    }
-
-    public void setTemperatureMax(double temperatureMax) {
-        this.temperatureMax = temperatureMax;
-    }
-
-    public double getTemperatureMin() {
-        return temperatureMin;
-    }
-
-    public void setTemperatureMin(double temperatureMin) {
-        this.temperatureMin = temperatureMin;
-    }
-
-    double temperatureMin;
-    public TemperaturSensorDataGenerator(double temperatureMax,double temperatureMin){
-this.temperatureMax=temperatureMax;
-this.temperatureMin=temperatureMin;
-
-    }
+    private ArrayList<SensorObserver> sensorObservers = new ArrayList<>();
 
 
-    @Override
-    public void registerSensorObserver(SensorObserver sensorObserver) {
-        this.sensorObserver=sensorObserver;
-        //if something happens to the sensor, such as new data being available, we want to tell!
-
-    }
-
-    public void invertRunning() {
-        isRunning = !isRunning;
-        // stop that shit :)
-    }
-
-    boolean isRunning=true;
     @Override
     public void run() {
-        while(isRunning){
-            TemperaturesensorDTO temperaturesensorDTO = new TemperaturesensorDTO(temperatureMin,temperatureMax);
+        while(true){
+            //create a
+            Sensorparent temperaturesensorDTO = new TemperaturesensorDTO();
 
-            if(sensorObserver!=null){
-                sensorObserver.notify(temperaturesensorDTO);
 
+            if(sensorObservers!=null){
+                for( SensorObserver o: sensorObservers){
+                    o.notify(temperaturesensorDTO);
+                    //
+                }
             }
+
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -70,6 +39,12 @@ this.temperatureMin=temperatureMin;
         }
 
 
+
+    }
+
+    @Override
+    public void registerSensorObserver(SensorObserver sensorObserver) {
+        sensorObservers.add(sensorObserver);
 
     }
 }

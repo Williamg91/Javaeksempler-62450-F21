@@ -1,5 +1,7 @@
 package org.example.Datamodel.DTOs;
 
+import org.example.Datamodel.SensorObservable;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class TemperaturesensorDTO extends Sensorparent {
@@ -7,6 +9,9 @@ public class TemperaturesensorDTO extends Sensorparent {
 //only for creating the Data
 
 
+    public TemperaturesensorDTO(){
+
+    }
     public double getSimulatedValue() {
 
 
