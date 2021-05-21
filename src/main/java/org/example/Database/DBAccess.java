@@ -20,10 +20,7 @@ this.conn=connection;
 
     }
 
-    @Override
-    public void savePulseMeasurements(PulseSensorDTO pulseSensorDTO, int Patientid) {
 
-    }
 
     @Override
     public void saveAppointment(int PatientID, int AppointmentID) {

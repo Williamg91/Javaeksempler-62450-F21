@@ -3,21 +3,20 @@ package org.example.ViewControllers;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import javafx.scene.control.Label;
+import javafx.scene.chart.*;
+
+import javafx.scene.control.*;
+import org.example.Datamodel.DTOs.*;
 import org.example.Datamodel.DTOs.TemperaturesensorDTO;
+import org.example.Datamodel.DataGenerators.TemperaturSensorDataGenerator;
+import org.example.Datamodel.SensorObserver;
+import org.example.ObserverInterface;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
-public class ChartController {
+public class ChartController implements SensorObserver {
     ScheduledExecutorService scheduledExecutorService;
 
     //material from FXML
@@ -42,9 +41,17 @@ public class ChartController {
 
 
 
-    TemperaturesensorDTO dto ;
-    private void populateChart(){
 
+
+TemperaturSensorDataGenerator temperaturSensorDataGenerator = new TemperaturSensorDataGenerator();
+
+
+    @FXML
+    private void populateChart(){
+        System.out.println("fuccgg DD:");
+
+        new Thread(temperaturSensorDataGenerator).start();
+        temperaturSensorDataGenerator.registerSensorObserver(this);
 
 
     }
@@ -68,4 +75,9 @@ public class ChartController {
 */
     }
 
+    @Override
+    public void notify(TemperaturesensorDTO sensorDTO) {
+        System.out.println(sensorDTO.getSimulatedValue());
+
+    }
 }

@@ -9,6 +9,9 @@ public class TemperaturesensorDTO extends Sensorparent {
 //only for creating the Data
 
 
+    // default values
+    double simulatedmin =37.0;
+    double simulatedmax =38.9;
     public TemperaturesensorDTO(){
 
     }

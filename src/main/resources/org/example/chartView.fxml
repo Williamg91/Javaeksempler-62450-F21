@@ -18,7 +18,7 @@
           <NumberAxis fx:id="numberaxis" side="LEFT" />
         </yAxis>
       </LineChart>
-      <Button onAction="#startMeasurements" layoutX="122.0" layoutY="14.0" mnemonicParsing="false" text="Start målinger" />
+      <Button onAction="#populateChart" layoutX="122.0" layoutY="14.0" mnemonicParsing="false" text="Start målinger" />
       <Label layoutX="339.0" layoutY="19.0" text="Seneste målt værdi:" />
       <Label fx:id="valuelabel" layoutX="455.0" layoutY="19.0" text="100" />
    </children>

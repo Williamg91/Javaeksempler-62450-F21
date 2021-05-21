@@ -21,11 +21,12 @@ public class TemperaturSensorDataGenerator implements SensorObservable {
     public void run() {
         while(true){
             //create a
-            Sensorparent temperaturesensorDTO = new TemperaturesensorDTO();
+            TemperaturesensorDTO temperaturesensorDTO = new TemperaturesensorDTO();
 
 
             if(sensorObservers!=null){
                 for( SensorObserver o: sensorObservers){
+
                     o.notify(temperaturesensorDTO);
                     //
                 }
