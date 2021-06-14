@@ -1,9 +1,9 @@
 package org.example.Datamodel.DataGenerators;
 
-import org.example.Datamodel.DTOs.Sensorparent;
-import org.example.Datamodel.DTOs.TemperaturesensorDTO;
+
 import org.example.Datamodel.SensorObservable;
 import org.example.Datamodel.SensorObserver;
+import org.example.SensorDataModel.DTOs.TemperaturesensorDTO;
 
 import java.util.ArrayList;
 

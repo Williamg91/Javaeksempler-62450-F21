@@ -1,7 +1,7 @@
 package org.example.Datamodel;
 
-import org.example.Datamodel.DTOs.Sensorparent;
-import org.example.Datamodel.DTOs.TemperaturesensorDTO;
+import org.example.SensorDataModel.DTOs.Sensorparent;
+import org.example.SensorDataModel.DTOs.TemperaturesensorDTO;
 
 public interface SensorObserver {
     void notify(TemperaturesensorDTO sensorDTO);

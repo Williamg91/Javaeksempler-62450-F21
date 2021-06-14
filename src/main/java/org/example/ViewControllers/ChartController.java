@@ -6,14 +6,15 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.*;
 
 import javafx.scene.control.*;
-import org.example.Datamodel.DTOs.*;
-import org.example.Datamodel.DTOs.TemperaturesensorDTO;
+
 import org.example.Datamodel.DataGenerators.TemperaturSensorDataGenerator;
 import org.example.Datamodel.SensorObserver;
 import org.example.ObserverInterface;
+import org.example.SensorDataModel.DTOs.TemperaturesensorDTO;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 import java.util.concurrent.*;
 
 public class ChartController implements SensorObserver {
@@ -48,11 +49,33 @@ TemperaturSensorDataGenerator temperaturSensorDataGenerator = new TemperaturSens
 
     @FXML
     private void populateChart(){
-        System.out.println("fuccgg DD:");
 
         new Thread(temperaturSensorDataGenerator).start();
         temperaturSensorDataGenerator.registerSensorObserver(this);
 
+
+    }
+
+    public void getTextInput(){
+        System.out.println("fuccgg DD:");
+
+        //lånt fra https://code.makery.ch/blog/javafx-dialogs-official/
+        TextInputDialog dialog = new TextInputDialog("walter");
+        dialog.setTitle("Text Input Dialog");
+        dialog.setHeaderText("Look, a Text Input Dialog");
+        dialog.setContentText("Please enter your name:");
+
+// Traditional way to get the response value.
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            System.out.println("Your name: " + result.get());
+            if(result.get().contains("w")){
+                System.out.println("der er W i dit navn");
+            }
+        }
+
+// The Java 8 way to get the response value (with lambda expression).
+        result.ifPresent(name -> System.out.println("Your name: " + name));
 
     }
 
@@ -74,6 +97,8 @@ TemperaturSensorDataGenerator temperaturSensorDataGenerator = new TemperaturSens
         }, 0, 1, TimeUnit.SECONDS);
 */
     }
+
+
 
     @Override
     public void notify(TemperaturesensorDTO sensorDTO) {

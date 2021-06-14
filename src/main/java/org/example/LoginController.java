@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.example.App;
-import org.example.Datamodel.DTOs.Sensorparent;
+
 import org.example.Datamodel.DataGenerators.TemperaturSensorDataGenerator;
 import org.example.Datamodel.SensorObserver;
 
